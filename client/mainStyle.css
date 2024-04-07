@@ -1,0 +1,311 @@
+h1 {
+  text-align: center;
+  color: white;
+  padding-bottom: 100px;
+}
+
+/* background animation colors */
+body {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(315deg, rgb(226, 57, 57) 3%, rgb(236, 234, 70) 38%, rgb(207, 207, 207) 68%, rgb(121, 27, 27) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+/* waves in the background */
+.wave {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+  25% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(1);
+  }
+}
+#gameCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(169, 169, 169, 0.5);
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+h2, p {
+  margin-left: 50px;
+}
+
+button {
+  margin-left: 200px;
+}
+
+#sum {
+  margin-top: 200px;
+  color: white;
+}
+
+#buyButton {
+  width: 300px;
+  margin: 0px;
+}
+
+#sort {
+  display: inline;
+  padding: 50px;
+}
+
+#search {
+  display: inline;
+}
+
+#searchAndSort {
+  align-items: center;
+}
+
+#sort, #search {
+  /* display: flex; */
+  align-items: center;
+  margin-right: 20px;
+}
+
+#sortBtn, #searchBtn {
+  margin-left: 10px;
+}
+
+/* //////////////////////////////////////////////////////////////// */
+#labelSearch {
+  width: 100%;
+  max-width: 300px;
+}
+
+input {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+  color: #111;
+  font-size: 10px;
+  box-shadow: 3px 1px 0px 2px, 0px -1px 0px 2px rgba(0, 0, 0, 0.62);
+  height: 55px;
+  transform: skew(-3deg, 1deg);
+  font-family: "Knewave", cursive;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+input:focus, input:valid {
+  outline: none;
+}
+input:focus ~ ul li:nth-child(1)::before, input:valid ~ ul li:nth-child(1)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+input:focus ~ ul li:nth-child(1)::after, input:valid ~ ul li:nth-child(1)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+input:focus ~ ul li:nth-child(2)::before, input:valid ~ ul li:nth-child(2)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+input:focus ~ ul li:nth-child(2)::after, input:valid ~ ul li:nth-child(2)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+input:focus ~ ul li:nth-child(3)::before, input:valid ~ ul li:nth-child(3)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+input:focus ~ ul li:nth-child(3)::after, input:valid ~ ul li:nth-child(3)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+input:focus ~ ul li:nth-child(4)::before, input:valid ~ ul li:nth-child(4)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+input:focus ~ ul li:nth-child(4)::after, input:valid ~ ul li:nth-child(4)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+input:focus ~ ul li:nth-child(5)::before, input:valid ~ ul li:nth-child(5)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+input:focus ~ ul li:nth-child(5)::after, input:valid ~ ul li:nth-child(5)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+input:focus ~ ul li:nth-child(6)::before, input:valid ~ ul li:nth-child(6)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+input:focus ~ ul li:nth-child(6)::after, input:valid ~ ul li:nth-child(6)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+input:focus ~ ul li:nth-child(1)::after, input:valid ~ ul li:nth-child(1)::after {
+  transition-delay: 400ms;
+}
+input:focus ~ ul li:nth-child(2)::after, input:valid ~ ul li:nth-child(2)::after {
+  transition-delay: 600ms;
+}
+input:focus ~ ul li:nth-child(3)::after, input:valid ~ ul li:nth-child(3)::after {
+  transition-delay: 800ms;
+}
+input:focus ~ ul li:nth-child(4)::after, input:valid ~ ul li:nth-child(4)::after {
+  transition-delay: 1000ms;
+}
+input:focus ~ ul li:nth-child(5)::after, input:valid ~ ul li:nth-child(5)::after {
+  transition-delay: 1200ms;
+}
+input:focus ~ ul li:nth-child(6)::after, input:valid ~ ul li:nth-child(6)::after {
+  transition-delay: 1400ms;
+}
+
+label {
+  position: relative;
+}
+
+#ulSearch {
+  position: absolute;
+  top: 38px;
+  left: -4px;
+  margin: 0;
+  list-style: none;
+  padding-left: 22px;
+  position: absolute;
+  display: flex;
+  pointer-events: none;
+  transition: 200ms;
+}
+#ulSearch li {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: transparent;
+  pointer-events: none;
+  transition: 500ms ease-in-out;
+}
+#ulSearch li ::selection {
+  color: transparent;
+}
+#ulSearch li::after, #ulSearch li::before {
+  color: black;
+  position: absolute;
+  transition: 500ms ease-in-out;
+}
+#ulSearch li::before {
+  top: -20px;
+}
+#ulSearch li::after {
+  top: -63px;
+  transform: scale(0) rotate(210deg);
+  filter: blur(20px);
+}
+#ulSearch li[s]::before {
+  content: attr(s) "s";
+  transition-delay: 200ms;
+}
+#ulSearch li[s]::after {
+  content: attr(s) "s";
+  left: 12px;
+  color: #666;
+}
+#ulSearch li[e]::before {
+  content: attr(e) "e";
+  transition-delay: 400ms;
+}
+#ulSearch li[e]::after {
+  content: attr(e) "e";
+  left: 24px;
+  color: #666;
+}
+#ulSearch li[a]::before {
+  content: attr(a) "a";
+  transition-delay: 600ms;
+}
+#ulSearch li[a]::after {
+  content: attr(a) "a";
+  left: 36px;
+  color: #666;
+}
+#ulSearch li[r]::before {
+  content: attr(r) "r";
+  transition-delay: 800ms;
+}
+#ulSearch li[r]::after {
+  content: attr(r) "r";
+  left: 48px;
+  color: #666;
+}
+#ulSearch li[c]::before {
+  content: attr(c) "c";
+  transition-delay: 1000ms;
+}
+#ulSearch li[c]::after {
+  content: attr(c) "c";
+  left: 60px;
+  color: #666;
+}
+#ulSearch li[h]::before {
+  content: attr(h) "h";
+  transition-delay: 1200ms;
+}
+#ulSearch li[h]::after {
+  content: attr(h) "h";
+  left: 72px;
+  color: #666;
+}
+
+/* //////////////////////////////////////////////////////////////// */
+
+/*# sourceMappingURL=mainStyle.css.map */

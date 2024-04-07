@@ -1,0 +1,241 @@
+h1 {
+    text-align: center;
+    color: white;
+    padding-bottom: 100px;
+}
+/* background animation colors */
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgb(226, 57, 57) 3%, rgb(236, 234, 70) 38%, rgb(207, 207, 207) 68%, rgb(121, 27, 27) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+/* waves in the background */
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+#gameCard {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: rgba(169, 169, 169, 0.5)
+    
+}
+h2{
+    margin-bottom: 15px;
+}
+
+h2,p{
+    margin-left: 50px;
+}
+
+button{
+    margin-left: 200px;
+}
+
+#sum{
+margin-top: 200px;
+color: white;
+}
+#buyButton{
+    width: 300px;
+    margin: 0px;
+}
+
+#sort {
+    display:inline;
+    padding: 50px;
+}
+
+#search{
+display:inline;
+}
+
+#searchAndSort {
+    align-items: center;
+  }
+  
+  #sort,#search {
+    /* display: flex; */
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  #sortBtn,#searchBtn {
+    margin-left: 10px; 
+  }
+
+  
+
+  /* //////////////////////////////////////////////////////////////// */
+
+  #labelSearch{
+    width: 100%;
+    max-width: 300px;
+  }
+  input{
+    // width: 100%;
+    // display: flex;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    color: #111;
+    font-size: 10px;
+    box-shadow: 3px 1px 0px 2px, 0px -1px 0px 2px rgba(0, 0, 0, 0.62);
+    height: 55px;    
+    transform: skew(-3deg, 1deg);
+    font-family: 'Knewave', cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    &:focus,
+    &:valid{
+      outline: none;
+      ~ ul li{
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}){
+            &::before{
+              filter: blur(20px);
+              transform: translate(0, -35px) rotate(-210deg);
+            }
+            &::after{
+              filter: blur(0);
+              transform: scale(1) rotate(0);
+            }
+          }
+        }
+        @for $i from 1 through 6{
+          &:nth-child(#{$i}){
+            &::after{
+              transition-delay: 200ms + ($i * 200ms);
+            }
+          }
+        }
+      }
+    }
+  }
+  label{
+    position: relative;
+  }
+  #ulSearch{
+    position: absolute;
+    top: 38px;
+    left: -4px;
+    margin: 0;
+    list-style: none;
+    padding-left: 22px;
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    transition: 200ms;
+    li{
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: transparent;
+      pointer-events: none;
+      transition: 500ms ease-in-out;
+      ::selection{
+        color: transparent;
+      }
+      &::after,
+      &::before{
+        color: black;
+        position: absolute;
+        transition: 500ms ease-in-out;
+      }
+      &::before{
+        top: -20px;
+      }
+      &::after{
+        top: -63px;
+        transform: scale(0) rotate(210deg);
+        filter: blur(20px);
+      }
+      $chars: s,e,a,r,c,h;
+      @each $char in $chars {
+        $i: index($chars, $char);
+        $x: index($chars, $char);
+        $i: $i * 200;
+        $y: $x * 12;
+        &[#{$char}]::before{
+          content: attr($char) quote($char);
+          transition-delay: $i+ms;
+        }
+        &[#{$char}]::after{
+          content: attr($char) quote($char);
+          left: unquote($y+'px');
+          color: #666;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+    /* //////////////////////////////////////////////////////////////// */
